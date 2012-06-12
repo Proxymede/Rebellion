@@ -1,0 +1,36 @@
+
+planete		->
+		-flotte
+		-personnel
+		-instalation
+		-unit
+		-diplomatie
+		-alliement
+
+charac		->
+		-nom
+		-cbt
+		-espionnage
+		-diplo
+		-charisme
+
+ship		->
+		-nom
+		-type
+		-PF
+		-PV
+		-PB
+		-AV
+
+flotte		->
+-ship
+-personnel
+-unit
+
+unit		->
+-type
+-PF
+-PV
+
+instalation	->
+-type
