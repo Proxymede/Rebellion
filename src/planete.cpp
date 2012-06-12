@@ -5,7 +5,7 @@
 // Login   <pinty_f@epitech.net>
 // 
 // Started on  Thu Jun  7 20:58:22 2012 felix pinty
-// Last update Tue Jun 12 16:26:10 2012 felix pinty
+// Last update Tue Jun 12 16:35:41 2012 felix pinty
 //
 
 #include	"planete.h"
@@ -65,6 +65,11 @@ int		planete::getPosX()
 int		planete::getPosY()
 {
   return (this->posY);
+}
+
+std::list<flotte>	planete::getFlottes()
+{
+  return (this->flottes);
 }
 
 planete::~planete()

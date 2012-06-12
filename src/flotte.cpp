@@ -5,7 +5,7 @@
 // Login   <pinty_f@epitech.net>
 // 
 // Started on  Mon Jun 11 09:29:30 2012 felix pinty
-// Last update Tue Jun 12 16:26:10 2012 felix pinty
+// Last update Tue Jun 12 17:38:05 2012 felix pinty
 //
 
 #include	<list>
@@ -89,23 +89,30 @@ std::string	flotte::getName()
   return (this->name);
 }
 
-void		flotte::move(planete &src, planete &dest)
+void		flotte::move(planete& src, planete& dest)
 {
   std::list<flotte>::iterator it;
 
+
+  std::cout << "Flotte deja en mouvement " << this->dep << " jour restant." << std::endl;
   if (this->dep != 0)
     {
-      std::cout << "Flotte deja en mouvement" << this->dep << " jour restant." << std::endl;
+      std::cout << "Flotte deja en mouvement " << this->dep << " jour restant." << std::endl;
       return;
     }
   else
     {
-      it = src.flottes.begin();
-      for (src.flottes.begin(); it != src.flottes.end(); ++it)
+      it = src.getFlottes().begin();
+      for (src.getFlottes().begin(); it != src.getFlottes().end(); ++it)
 	{
-	  if ()	  
+	  if (this->getName() == it->getName())
+	    {
+	      this->dep = (int)sqrt(pow(src.getPosX() - dest.getPosX(), 2) + pow(src.getPosY() - dest.getPosY(), 2));
+	      std::cout << this->getName() << " en mouvement. " << this->dep << " jour de voyage." << std::endl;
+	      src.getFlottes().erase(it);
+	      return;
+	    }
 	}
-      this->dep = (int)sqrt(pow(src.getPosX() - dest.getPosX(), 2) + pow(src.getPosY() - dest.getPosY(), 2));
-      std::cout << "Flotte en mouvement. " << this->dep << " jour de voyage." << std::endl;
+      std::cout << "Flotte inexistante." << std::endl;
     }
 }
