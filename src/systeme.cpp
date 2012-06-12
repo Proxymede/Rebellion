@@ -5,8 +5,10 @@
 // Login   <pinty_f@epitech.net>
 // 
 // Started on  Mon Jun 11 15:03:00 2012 felix pinty
-// Last update Mon Jun 11 16:11:43 2012 felix pinty
+// Last update Tue Jun 12 16:26:12 2012 felix pinty
 //
+
+#include	"systeme.h"
 
 
 systeme::systeme()
@@ -19,18 +21,18 @@ systeme::systeme(std::string name)
   this->name = name;
 }
 
-void	flotte::addPerso(perso & add)
+void	systeme::addSysteme(planete & add)
 {
-  this->personnel.push_back(add);
+  this->planete.push_back(add);
   std::cout << "The " << add.getName() << " as been add to " << this->name << "." << std::endl;
 }
 
-void	flotte::showPerso()
+void	systeme::showSysteme()
 {
-  std::list<perso>::iterator it;
+  std::list<planete>::iterator it;
 
-  it = this->personnel.begin();
-  for (this->personnel.begin(); it != this->personnel.end(); ++it)
+  it = this->planetes.begin();
+  for (this->planetes.begin(); it != this->planetes.end(); ++it)
     {
       std::cout << it->getName() << std::endl;
     }

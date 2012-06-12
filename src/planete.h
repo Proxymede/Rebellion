@@ -5,21 +5,24 @@
 ** Login   <pinty_f@epitech.net>
 ** 
 ** Started on  Thu Jun  7 20:50:13 2012 felix pinty
-** Last update Mon Jun 11 14:38:12 2012 felix pinty
+** Last update Tue Jun 12 15:02:01 2012 felix pinty
 */
 
 #ifndef	__PLANETE_H__
 #define	__PLANETE_H__
 
-#include	"personnel.h"
-#include	"flotte.h"
 #include	<list>
+
+#include	"personnel.h"
+
+class	flotte;
 
 class	planete
 {
  private:
   std::string		name;
-  int			DUG;
+  int			posX;
+  int			posY;
   std::list<flotte>	flottes;
   std::list<perso>	personnel;
   // std::list		unit;
@@ -31,8 +34,12 @@ class	planete
   void showFlotte();
   void addPerso(perso &);
   void showPerso();
+
+  int	getPosX();
+  int	getPosY();
+
   planete();
-  planete(std::string);
+  planete(std::string, int, int);
   ~planete();
 };
 

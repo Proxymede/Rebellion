@@ -5,12 +5,12 @@
 ## Login   <pinty_f@epitech.net>
 ## 
 ## Started on  Thu Jun  7 18:38:35 2012 felix pinty
-## Last update Mon Jun 11 09:53:29 2012 felix pinty
+## Last update Tue Jun 12 16:26:11 2012 felix pinty
 ##
 
 CC      =       g++
 
-CFLAGS  =       -W -Wall -Wextra
+CFLAGS  =       -W -Wall -Wextra -lm
 
 
 NAME    =       $(BINDIR)/rebellion

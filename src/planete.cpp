@@ -5,19 +5,21 @@
 // Login   <pinty_f@epitech.net>
 // 
 // Started on  Thu Jun  7 20:58:22 2012 felix pinty
-// Last update Mon Jun 11 14:39:58 2012 felix pinty
+// Last update Tue Jun 12 16:26:10 2012 felix pinty
 //
 
 #include	"planete.h"
+#include	"flotte.h"
 
 planete::planete()
 {
   this->name = "NULL";
 }
 
-planete::planete(std::string name, int DUG)
+planete::planete(std::string name, int X, int Y)
 {
-  this->DUG = DUG;
+  this->posX = X;
+  this->posY = Y;
   this->name = name;
 }
 
@@ -53,6 +55,16 @@ void	planete::showPerso()
     {
       std::cout << it->getName() << std::endl;
     }
+}
+
+int		planete::getPosX()
+{
+  return (this->posX);
+}
+
+int		planete::getPosY()
+{
+  return (this->posY);
 }
 
 planete::~planete()

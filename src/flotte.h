@@ -5,7 +5,7 @@
 ** Login   <pinty_f@epitech.net>
 ** 
 ** Started on  Mon Jun 11 09:08:20 2012 felix pinty
-** Last update Mon Jun 11 12:58:55 2012 felix pinty
+** Last update Tue Jun 12 16:26:11 2012 felix pinty
 */
 
 #ifndef	__FLOTTE_H__
@@ -15,6 +15,7 @@
 #include	<list>
 
 #include	"personnel.h"
+#include	"planete.h"
 
 class	vaisseau
 {
@@ -33,8 +34,9 @@ class	vaisseau
 class	flotte
 {
  private:
-  std::string name;
-  int	status;
+  std::string		name;
+  int			dep;
+
   std::list<vaisseau>	vaisseaux;
   std::list<perso>	personnel;
  public:
@@ -42,7 +44,7 @@ class	flotte
   void  showShip();
   void	addPerso(perso &);
   void	showPerso();
-
+  void	move(planete &, planete &);
   std::string	getName();
 
   flotte();

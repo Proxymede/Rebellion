@@ -5,10 +5,11 @@
 // Login   <pinty_f@epitech.net>
 // 
 // Started on  Mon Jun 11 09:29:30 2012 felix pinty
-// Last update Mon Jun 11 16:11:39 2012 felix pinty
+// Last update Tue Jun 12 16:26:10 2012 felix pinty
 //
 
 #include	<list>
+#include	<math.h>
 #include	"flotte.h"
 
 vaisseau::vaisseau()
@@ -37,6 +38,7 @@ std::string	vaisseau::getName()
 flotte::flotte()
 {
   this->name = "flotte 01";
+  this->dep = 0;
 }
 
 flotte::~flotte()
@@ -83,5 +85,27 @@ flotte::flotte(std::string name)
 
 std::string	flotte::getName()
 {
+  this->dep = 0;
   return (this->name);
+}
+
+void		flotte::move(planete &src, planete &dest)
+{
+  std::list<flotte>::iterator it;
+
+  if (this->dep != 0)
+    {
+      std::cout << "Flotte deja en mouvement" << this->dep << " jour restant." << std::endl;
+      return;
+    }
+  else
+    {
+      it = src.flottes.begin();
+      for (src.flottes.begin(); it != src.flottes.end(); ++it)
+	{
+	  if ()	  
+	}
+      this->dep = (int)sqrt(pow(src.getPosX() - dest.getPosX(), 2) + pow(src.getPosY() - dest.getPosY(), 2));
+      std::cout << "Flotte en mouvement. " << this->dep << " jour de voyage." << std::endl;
+    }
 }

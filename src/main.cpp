@@ -5,15 +5,19 @@
 // Login   <pinty_f@epitech.net>
 // 
 // Started on  Tue May 29 10:31:46 2012 felix pinty
-// Last update Mon Jun 11 16:11:46 2012 felix pinty
+// Last update Tue Jun 12 15:59:51 2012 felix pinty
 //
 
+#include	"systeme.h"
 #include	"planete.h"
+#include	"flotte.h"
 
-int	main()
+
+int	main(void)
 {
-  planete	hoth("Hoth", 30);
-  flotte	flotille;
+  planete	hoth("Hoth", 30, 30);
+  planete	tatoinne("tatoinne", 0, 90);
+  flotte	flotille("501'ene");
   flotte	starfleat("Starfleat");
 
   perso		Talon("Talon");
@@ -43,4 +47,6 @@ int	main()
   starfleat.showPerso();
   hoth.showPerso();
   hoth.showFlotte();
+  flotille.move(hoth, tatoinne);
+  flotille.move(hoth, tatoinne);
 }
