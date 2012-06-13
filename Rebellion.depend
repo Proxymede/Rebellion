@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1339589024 source:c:\users\vinxce\documents\github\rebellion\src\main.cpp
+	"systeme.h"
+	"planete.h"
+	"flotte.h"
+
+1339590115 c:\users\vinxce\documents\github\rebellion\src\systeme.h
+	"planete.h"
+
+1339590808 c:\users\vinxce\documents\github\rebellion\src\planete.h
+	<list>
+	"personnel.h"
+
+1339589024 c:\users\vinxce\documents\github\rebellion\src\personnel.h
+	<iostream>
+
+1339589024 c:\users\vinxce\documents\github\rebellion\src\flotte.h
+	<iostream>
+	<list>
+	"personnel.h"
+	"planete.h"
+
+1339589024 source:c:\users\vinxce\documents\github\rebellion\src\personnel.cpp
+	"personnel.h"
+
+1339590079 source:c:\users\vinxce\documents\github\rebellion\src\planete.cpp
+	"planete.h"
+	"flotte.h"
+
