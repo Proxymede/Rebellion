@@ -110,7 +110,7 @@ void		flotte::move(planete& src, planete& dest)
 	      //std::cout << it->getName() << " en mouvement. " << it->dep << " jour de voyage." << std::endl;
 	      std::cout << "test -> " << it->getName() << std::endl;
 	      src.showFlotte();
-	      src.getFlottes().erase(it);
+	      src.getFlottes().remove(it);
 	      src.showFlotte();
 	      std::cout << "test -> " << it->getName() << std::endl;
 	      src.showFlotte();
