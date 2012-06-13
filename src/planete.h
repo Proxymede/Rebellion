@@ -14,8 +14,9 @@
 #include	<list>
 
 #include	"personnel.h"
+#include    "flotte.h"
 
-//class	flotte;
+class	flotte;
 
 class	planete
 {
@@ -25,7 +26,7 @@ class	planete
   int			posY;
   std::list<flotte>	flottes;
   std::list<perso>	personnel;
-  // std::list		unit;
+  //std::list		unit;
   //std::list		instalation;
 
   int			diplomatie;
