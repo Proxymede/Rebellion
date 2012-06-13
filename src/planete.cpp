@@ -1,9 +1,9 @@
 //
 // planete.cpp for  in /home/pinty_f//Desktop/perso/rebellion
-// 
+//
 // Made by felix pinty
 // Login   <pinty_f@epitech.net>
-// 
+//
 // Started on  Thu Jun  7 20:58:22 2012 felix pinty
 // Last update Tue Jun 12 16:35:41 2012 felix pinty
 //
@@ -72,6 +72,10 @@ std::list<flotte>	planete::getFlottes()
   return (this->flottes);
 }
 
+std::string     planete::getName()
+{
+    return (this->name);
+}
 planete::~planete()
 {
 }
