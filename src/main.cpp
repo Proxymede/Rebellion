@@ -1,9 +1,9 @@
 //
 // main.cpp for  in /home/pinty_f//Desktop/perso/rebellion
-// 
+//
 // Made by felix pinty
 // Login   <pinty_f@epitech.net>
-// 
+//
 // Started on  Tue May 29 10:31:46 2012 felix pinty
 // Last update Tue Jun 12 21:30:52 2012 felix pinty
 //
@@ -21,7 +21,7 @@ int	main(void)
   flotte	starfleat("Starfleat");
   vaisseau	fregateM(0 , 0, 0, "Fregate medicale");
   vaisseau	fregateA(0 , 0, 0, "Fregate d'assault");
-  
+
   vaisseau	starimp(0 , 0, 0, "Stardestroyer de classe imperial");
   vaisseau	starvic(0 , 0, 0, "Stardestroyer de classe victoire");
 
@@ -31,6 +31,20 @@ int	main(void)
   flotille.addShip(fregateA);
   starfleat.addShip(starimp);
   starfleat.addShip(starvic);
+
+  hoth.showFlotte();
+  tatoinne.showFlotte();
+
   flotille.move(hoth, tatoinne);
+
+  hoth.showFlotte();
+  tatoinne.showFlotte();
+
   flotille.move(hoth, tatoinne);
+
+ /* std::cout<<std::endl<<std::endl;
+  hoth.showFlotte();
+  tatoinne.showFlotte();
+  std::cout<<std::endl<<std::endl;*/
+  return (42);
 }

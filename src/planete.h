@@ -40,7 +40,7 @@ class	planete
   int	getPosX();
   int	getPosY();
 
-  std::list<flotte>	getFlottes();
+  std::list<flotte>&	getFlottes();
 
   planete();
   planete(std::string, int, int);

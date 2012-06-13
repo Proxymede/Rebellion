@@ -1,29 +1,30 @@
 # depslib dependency file v1.0
-1339589024 source:c:\users\vinxce\documents\github\rebellion\src\main.cpp
+1339595259 source:c:\users\vinxce\documents\github\rebellion\src\main.cpp
 	"systeme.h"
 	"planete.h"
 	"flotte.h"
 
-1339590115 c:\users\vinxce\documents\github\rebellion\src\systeme.h
+1339591713 c:\users\vinxce\documents\github\rebellion\src\systeme.h
 	"planete.h"
 
-1339590808 c:\users\vinxce\documents\github\rebellion\src\planete.h
+1339594424 c:\users\vinxce\documents\github\rebellion\src\planete.h
 	<list>
 	"personnel.h"
+	"flotte.h"
 
-1339589024 c:\users\vinxce\documents\github\rebellion\src\personnel.h
+1339591713 c:\users\vinxce\documents\github\rebellion\src\personnel.h
 	<iostream>
 
-1339589024 c:\users\vinxce\documents\github\rebellion\src\flotte.h
+1339591713 c:\users\vinxce\documents\github\rebellion\src\flotte.h
 	<iostream>
 	<list>
 	"personnel.h"
 	"planete.h"
 
-1339589024 source:c:\users\vinxce\documents\github\rebellion\src\personnel.cpp
+1339591713 source:c:\users\vinxce\documents\github\rebellion\src\personnel.cpp
 	"personnel.h"
 
-1339590079 source:c:\users\vinxce\documents\github\rebellion\src\planete.cpp
+1339595362 source:c:\users\vinxce\documents\github\rebellion\src\planete.cpp
 	"planete.h"
 	"flotte.h"
 
@@ -58,4 +59,12 @@
 
 1339591147 source:c:\users\keltals\documents\github\rebellion\src\systeme.cpp
 	"systeme.h"
+
+1339591713 source:c:\users\vinxce\documents\github\rebellion\src\systeme.cpp
+	"systeme.h"
+
+1339595241 source:c:\users\vinxce\documents\github\rebellion\src\flotte.cpp
+	<list>
+	<math.h>
+	"flotte.h"
 

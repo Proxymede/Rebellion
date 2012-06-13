@@ -34,9 +34,10 @@ void	planete::showFlotte()
   std::list<flotte>::iterator it;
 
   it = this->flottes.begin();
+  std::cout<<"Fleat on " << this->name << " :" << std::endl;
   for (this->flottes.begin(); it != this->flottes.end(); ++it)
     {
-      std::cout << it->getName() << std::endl;
+      std::cout << "\t" << it->getName() << std::endl;
     }
 }
 
@@ -67,7 +68,7 @@ int		planete::getPosY()
   return (this->posY);
 }
 
-std::list<flotte>	planete::getFlottes()
+std::list<flotte>&	planete::getFlottes()
 {
   return (this->flottes);
 }
@@ -76,6 +77,8 @@ std::string     planete::getName()
 {
     return (this->name);
 }
+
 planete::~planete()
 {
+
 }

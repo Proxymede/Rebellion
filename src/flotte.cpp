@@ -1,9 +1,9 @@
 //
 // flotte.cpp for  in /home/pinty_f//Desktop/perso/rebellion/src
-// 
+//
 // Made by felix pinty
 // Login   <pinty_f@epitech.net>
-// 
+//
 // Started on  Mon Jun 11 09:29:30 2012 felix pinty
 // Last update Wed Jun 13 12:07:46 2012 felix pinty
 //
@@ -96,7 +96,7 @@ void		flotte::move(planete& src, planete& dest)
   std::cout << "Move Funct begin " << this->dep << std::endl;
   if (this->dep != 0)
     {
-      std::cout << "Flotte deja en mouvement " << this->dep << " jour restant." << std::endl;
+      std::cout << this->name << " deja en mouvement " << this->dep << " jour restant." << std::endl;
       return;
     }
   else
@@ -107,13 +107,8 @@ void		flotte::move(planete& src, planete& dest)
 	  if (this->getName() == it->getName())
 	    {
 	      this->dep = sqrt(pow(src.getPosX() - dest.getPosX(), 2) + pow(src.getPosY() - dest.getPosY(), 2));
-	      //std::cout << it->getName() << " en mouvement. " << it->dep << " jour de voyage." << std::endl;
-	      std::cout << "test -> " << it->getName() << std::endl;
-	      src.showFlotte();
-	      src.getFlottes().erase(it);
-	      src.showFlotte();
-	      std::cout << "test -> " << it->getName() << std::endl;
-	      src.showFlotte();
+	      std::cout << it->getName() << " en mouvement. " << this->dep << " jour de voyage." << std::endl;
+	      dest.getFlottes().splice(it, src.getFlottes(), it);
 	      std::cout << "Move Funct end " << this->dep << std::endl;
 	      return;
 	    }
