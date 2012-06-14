@@ -65,7 +65,7 @@ void        perso::move(planete *src, planete *dest)
         return;
         }
     }
-    std::cout << "Personnage inexistante." << std::endl;
+    std::cout << "Personnage inexistant." << std::endl;
 }
 
 void        perso::move(flotte *src, planete *dest)
