@@ -12,39 +12,6 @@
 #include	<math.h>
 #include	"../header/flotte.h"
 
-vaisseau::vaisseau()
-{
-}
-
-vaisseau::vaisseau(int bou, int coq, int fir, std::string name)
-{
-  this->bou = bou;
-  this->coq = coq;
-  this->fir = fir;
-  this->name = name;
-  //std::cout << "The " << name << " is ready to serv!" << std::endl;
-}
-
-vaisseau::~vaisseau()
-{
-  //  std::cout << "The " << name << " as been destroy!" << std::endl;
-}
-
-std::string	vaisseau::getName()
-{
-  return (this->name);
-}
-
-flotte::flotte()
-{
-  this->name = "flotte 01";
-  this->dep = 0;
-}
-
-flotte::~flotte()
-{
-}
-
 void	flotte::addShip(vaisseau *add)
 {
   this->vaisseaux.push_back(*add);
@@ -77,38 +44,6 @@ void	flotte::showPerso()
     {
       std::cout << it->getName() << std::endl;
     }
-}
-flotte::flotte(std::string name, planete *home)
-{
-  this->name = name;
-  this->dep = 0;
-  this->posX = home->getPosX();
-  this->posY = home->getPosY();
-}
-
-std::string	flotte::getName()
-{
-    return (this->name);
-}
-
-int     flotte::getDep()
-{
- return (this->dep);
-}
-
-int         flotte::getPosX()
-{
- return (this->posX);
-}
-
-int         flotte::getPosY()
-{
- return (this->posY);
-}
-
-std::list<perso>    &flotte::getPerso()
-{
-    return(this->personnel);
 }
 
 void		flotte::move(planete *src, planete *dest)

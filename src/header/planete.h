@@ -13,8 +13,8 @@
 
 #include	<list>
 
-#include	"../header/personnel.h"
-#include    "../header/flotte.h"
+#include	"personnel.h"
+#include    "flotte.h"
 
 class	flotte;
 class   perso;

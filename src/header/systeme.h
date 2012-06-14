@@ -12,7 +12,7 @@
 #define	__SYSTEME_H__
 
 
-#include	"../header/planete.h"
+#include	"planete.h"
 
 class	systeme
 {

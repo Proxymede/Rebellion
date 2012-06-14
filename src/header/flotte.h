@@ -14,8 +14,8 @@
 #include	<iostream>
 #include	<list>
 
-#include	"../header/personnel.h"
-#include	"../header/planete.h"
+#include	"personnel.h"
+#include	"planete.h"
 
 class   planete;
 class   perso;

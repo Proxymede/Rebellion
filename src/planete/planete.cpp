@@ -11,18 +11,6 @@
 #include	"../header/planete.h"
 #include	"../header/flotte.h"
 
-planete::planete()
-{
-  this->name = "NULL";
-}
-
-planete::planete(std::string name, int X, int Y)
-{
-  this->posX = X;
-  this->posY = Y;
-  this->name = name;
-}
-
 void	planete::addFlotte(flotte *add)
 {
   this->flottes.push_back(*add);
@@ -56,35 +44,4 @@ void	planete::showPerso()
     {
       std::cout << it->getName() << std::endl;
     }
-}
-
-int		planete::getPosX()
-{
-  return (this->posX);
-}
-
-int		planete::getPosY()
-{
-  return (this->posY);
-}
-
-
-std::list<flotte> &planete::getFlottes()
-{
-  return (this->flottes);
-}
-
-std::list<perso> &planete::getPerso()
-{
-  return (this->personnel);
-}
-
-std::string     planete::getName()
-{
-    return (this->name);
-}
-
-planete::~planete()
-{
-
 }

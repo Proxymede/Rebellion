@@ -11,39 +11,6 @@
 #include    <list>
 #include	"../header/personnel.h"
 
-perso::perso(int cbt, int esp, int dip, int cha, std::string name)
-{
-  this-> cbt = cbt;
-  this-> esp = esp;
-  this-> dip = dip;
-  this-> cha = cha;
-  this-> name = name;
-  this-> dep = 0;
-  std::cout << this->name << " on duty!" << std::endl;
-}
-
-perso::perso()
-{
-  this-> cbt = 0;
-  this-> esp = 0;
-  this-> dip = 0;
-  this-> cha = 0;
-  this-> dep = 0;
-  this-> name = "NULL";
-  std::cout << this->name << " on duty!" << std::endl;
-}
-
-perso::perso(std::string name)
-{
-  this-> cbt = 0;
-  this-> esp = 0;
-  this-> dip = 0;
-  this-> cha = 0;
-  this-> dep = 0;
-  this-> name = name;
-  std::cout << this->name << " on duty!" << std::endl;
-}
-
 void        perso::move(planete *src, planete *dest)
 {
     std::list<perso>::iterator it;
@@ -65,7 +32,7 @@ void        perso::move(planete *src, planete *dest)
         return;
         }
     }
-    std::cout << "Personnage inexistant." << std::endl;
+    std::cout << "Personnage inexistante." << std::endl;
 }
 
 void        perso::move(flotte *src, planete *dest)
@@ -95,13 +62,4 @@ void        perso::move(flotte *src, planete *dest)
         }
     }
     std::cout << "Personnage inexistante." << std::endl;
-}
-
-perso::~perso()
-{
-}
-
-std::string	perso::getName()
-{
-  return (this->name);
 }
