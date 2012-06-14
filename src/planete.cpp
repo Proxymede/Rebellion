@@ -23,10 +23,10 @@ planete::planete(std::string name, int X, int Y)
   this->name = name;
 }
 
-void	planete::addFlotte(flotte & add)
+void	planete::addFlotte(flotte *add)
 {
-  this->flottes.push_back(add);
-  std::cout << "The " << add.getName() << " as been add to " << this->name << "." << std::endl;
+  this->flottes.push_back(*add);
+  std::cout << "The " << add->getName() << " as been add to " << this->name << "." << std::endl;
 }
 
 void	planete::showFlotte()
@@ -41,10 +41,10 @@ void	planete::showFlotte()
     }
 }
 
-void	planete::addPerso(perso & add)
+void	planete::addPerso(perso *add)
 {
-  this->personnel.push_back(add);
-  std::cout << "The " << add.getName() << " as been add to " << this->name << "." << std::endl;
+  this->personnel.push_back(*add);
+  std::cout << "The " << add->getName() << " as been add to " << this->name << "." << std::endl;
 }
 
 void	planete::showPerso()
@@ -68,9 +68,15 @@ int		planete::getPosY()
   return (this->posY);
 }
 
-std::list<flotte>&	planete::getFlottes()
+
+std::list<flotte> &planete::getFlottes()
 {
   return (this->flottes);
+}
+
+std::list<perso> &planete::getPerso()
+{
+  return (this->personnel);
 }
 
 std::string     planete::getName()

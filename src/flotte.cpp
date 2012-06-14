@@ -45,10 +45,10 @@ flotte::~flotte()
 {
 }
 
-void	flotte::addShip(vaisseau & add)
+void	flotte::addShip(vaisseau *add)
 {
-  this->vaisseaux.push_back(add);
-  std::cout << "The " << add.getName() << " as been add to " << this->name << "." << std::endl;
+  this->vaisseaux.push_back(*add);
+  std::cout << "The " << add->getName() << " as been add to " << this->name << "." << std::endl;
 }
 
 void	flotte::showShip()
@@ -62,10 +62,10 @@ void	flotte::showShip()
     }
 }
 
-void	flotte::addPerso(perso & add)
+void	flotte::addPerso(perso *add)
 {
-  this->personnel.push_back(add);
-  std::cout << "The " << add.getName() << " as been add to " << this->name << "." << std::endl;
+  this->personnel.push_back(*add);
+  std::cout << "The " << add->getName() << " as been add to " << this->name << "." << std::endl;
 }
 
 void	flotte::showPerso()
@@ -78,41 +78,59 @@ void	flotte::showPerso()
       std::cout << it->getName() << std::endl;
     }
 }
-flotte::flotte(std::string name)
+flotte::flotte(std::string name, planete *home)
 {
   this->name = name;
+  this->dep = 0;
+  this->posX = home->getPosX();
+  this->posY = home->getPosY();
 }
 
 std::string	flotte::getName()
 {
-  this->dep = 0;
-  return (this->name);
+    return (this->name);
 }
 
-void		flotte::move(planete& src, planete& dest)
+int     flotte::getDep()
 {
-  std::list<flotte>::iterator it;
+ return (this->dep);
+}
 
-  std::cout << "Move Funct begin " << this->dep << std::endl;
-  if (this->dep != 0)
+int         flotte::getPosX()
+{
+ return (this->posX);
+}
+
+int         flotte::getPosY()
+{
+ return (this->posY);
+}
+
+std::list<perso>    &flotte::getPerso()
+{
+    return(this->personnel);
+}
+
+void		flotte::move(planete *src, planete *dest)
+{
+    std::list<flotte>::iterator it;
+
+    it = src->getFlottes().begin();
+    for (src->getFlottes().begin(); it != src->getFlottes().end(); ++it)
     {
-      std::cout << this->name << " deja en mouvement " << this->dep << " jour restant." << std::endl;
-      return;
+    if (this->getName() == it->getName())
+        {
+            if (this->dep != 0)
+            {
+            std::cout << "Flotte deja en mouvement " << this->dep << " jour restant." << std::endl;
+            return;
+            }
+        this->dep = sqrt(pow(src->getPosX() - dest->getPosX(), 2) + pow(src->getPosY() - dest->getPosY(), 2));
+        std::cout << this->getName() << " en mouvement. " << this->dep << " jour de voyage." << std::endl;
+        it = src->getFlottes().erase(it);
+        dest->addFlotte(this);
+        return;
+        }
     }
-  else
-    {
-      it = src.getFlottes().begin();
-      for (src.getFlottes().begin(); it != src.getFlottes().end(); ++it)
-	{
-	  if (this->getName() == it->getName())
-	    {
-	      this->dep = sqrt(pow(src.getPosX() - dest.getPosX(), 2) + pow(src.getPosY() - dest.getPosY(), 2));
-	      std::cout << it->getName() << " en mouvement. " << this->dep << " jour de voyage." << std::endl;
-	      dest.getFlottes().splice(it, src.getFlottes(), it);
-	      std::cout << "Move Funct end " << this->dep << std::endl;
-	      return;
-	    }
-	}
-      std::cout << "Flotte inexistante." << std::endl;
-    }
+    std::cout << "Flotte inexistante." << std::endl;
 }

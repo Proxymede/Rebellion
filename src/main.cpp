@@ -15,36 +15,26 @@
 
 int	main(void)
 {
-  planete	hoth("Hoth", 30, 30);
-  planete	tatoinne("tatoinne", 0, 90);
-  flotte	flotille("501'ene");
-  flotte	starfleat("Starfleat");
-  vaisseau	fregateM(0 , 0, 0, "Fregate medicale");
-  vaisseau	fregateA(0 , 0, 0, "Fregate d'assault");
+    perso   *talon = new perso("Talon");
+    planete	*hoth = new planete("Hoth", 30, 30);
+    planete	*tatoinne = new planete("tatoinne", 0, 90);
+    flotte	*flotille = new flotte("501'ene", tatoinne);
+    flotte	*starfleat = new flotte("Starfleat", tatoinne);
+    vaisseau	*fregateM = new vaisseau(0 , 0, 0, "Fregate medicale");
+    vaisseau	*fregateA = new vaisseau(0 , 0, 0, "Fregate d'assault");
 
-  vaisseau	starimp(0 , 0, 0, "Stardestroyer de classe imperial");
-  vaisseau	starvic(0 , 0, 0, "Stardestroyer de classe victoire");
+    vaisseau	*starimp = new vaisseau(0 , 0, 0, "Stardestroyer de classe imperial");
+    vaisseau	*starvic = new vaisseau(0 , 0, 0, "Stardestroyer de classe victoire");
 
-  hoth.addFlotte(flotille);
-  hoth.addFlotte(starfleat);
-  flotille.addShip(fregateM);
-  flotille.addShip(fregateA);
-  starfleat.addShip(starimp);
-  starfleat.addShip(starvic);
+  hoth->addFlotte(flotille);
+  hoth->addFlotte(starfleat);
+  starfleat->addPerso(talon);
 
-  hoth.showFlotte();
-  tatoinne.showFlotte();
+  flotille->addShip(fregateM);
+  flotille->addShip(fregateA);
+  starfleat->addShip(starimp);
+  starfleat->addShip(starvic);
 
-  flotille.move(hoth, tatoinne);
-
-  hoth.showFlotte();
-  tatoinne.showFlotte();
-
-  flotille.move(hoth, tatoinne);
-
- /* std::cout<<std::endl<<std::endl;
-  hoth.showFlotte();
-  tatoinne.showFlotte();
-  std::cout<<std::endl<<std::endl;*/
-  return (42);
+talon->move(starfleat, tatoinne);
+talon->move(hoth, tatoinne);
 }

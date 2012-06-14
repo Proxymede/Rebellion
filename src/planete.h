@@ -17,6 +17,7 @@
 #include    "flotte.h"
 
 class	flotte;
+class   perso;
 
 class	planete
 {
@@ -31,16 +32,19 @@ class	planete
 
   int			diplomatie;
  public:
-  void addFlotte(flotte &);
+  void addFlotte(flotte *);
   void showFlotte();
-  void addPerso(perso &);
+
+  void addPerso(perso *);
   void showPerso();
+
   std::string   getName();
 
   int	getPosX();
   int	getPosY();
 
-  std::list<flotte>&	getFlottes();
+  std::list<flotte>	&getFlottes();
+  std::list<perso>  &getPerso();
 
   planete();
   planete(std::string, int, int);

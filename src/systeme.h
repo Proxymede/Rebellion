@@ -21,7 +21,7 @@ class	systeme
   std::list<planete>	planetes;
 
  public:
-  void	addPlanete(planete &);
+  void	addPlanete(planete);
   void	showPlanete();
 
   systeme();

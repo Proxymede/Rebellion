@@ -21,7 +21,7 @@ systeme::systeme(std::string name)
   this->name = name;
 }
 
-void	systeme::addPlanete(planete & add)
+void	systeme::addPlanete(planete add)
 {
   this->planetes.push_back(add);
   std::cout << "The " << add.getName() << " as been add to " << this->name << "." << std::endl;

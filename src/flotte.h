@@ -18,6 +18,8 @@
 #include	"planete.h"
 
 class   planete;
+class   perso;
+
 class	vaisseau
 {
  private:
@@ -25,6 +27,7 @@ class	vaisseau
   int	coq;
   int	fir;
   std::string	name;
+
  public:
   vaisseau();
   vaisseau(int,int,int, std::string);
@@ -36,20 +39,29 @@ class	flotte
 {
  private:
   std::string		name;
-  int			dep;
+  int			    dep;
+  int               posX;
+  int               posY;
 
   std::list<vaisseau>	vaisseaux;
   std::list<perso>	personnel;
  public:
-  void	addShip(vaisseau &);
+  void	addShip(vaisseau *);
   void  showShip();
-  void	addPerso(perso &);
+
+  void	addPerso(perso*);
   void	showPerso();
-  void	move(planete &, planete &);
+
+  void	move(planete *, planete *);
+
   std::string	getName();
+  int           getDep();
+  int           getPosX();
+  int           getPosY();
+  std::list<perso> &getPerso();
 
   flotte();
-  flotte(std::string);
+  flotte(std::string, planete *);
   ~flotte();
 };
 
