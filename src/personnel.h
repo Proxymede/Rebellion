@@ -13,7 +13,7 @@
 
 #include	<iostream>
 #include    <math.h>
-#include    "planete.h"
+#include    "../header/planete.h"
 
 class   planete;
 class   flotte;

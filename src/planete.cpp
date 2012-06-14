@@ -8,8 +8,8 @@
 // Last update Tue Jun 12 16:35:41 2012 felix pinty
 //
 
-#include	"planete.h"
-#include	"flotte.h"
+#include	"../header/planete.h"
+#include	"../header/flotte.h"
 
 planete::planete()
 {

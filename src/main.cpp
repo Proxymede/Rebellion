@@ -8,9 +8,9 @@
 // Last update Tue Jun 12 21:30:52 2012 felix pinty
 //
 
-#include	"systeme.h"
-#include	"planete.h"
-#include	"flotte.h"
+#include	"header/systeme.h"
+#include	"header/planete.h"
+#include	"header/flotte.h"
 
 
 int	main(void)

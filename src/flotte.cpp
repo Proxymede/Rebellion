@@ -10,7 +10,7 @@
 
 #include	<list>
 #include	<math.h>
-#include	"flotte.h"
+#include	"../header/flotte.h"
 
 vaisseau::vaisseau()
 {

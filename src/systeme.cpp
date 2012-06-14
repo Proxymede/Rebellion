@@ -8,7 +8,7 @@
 // Last update Tue Jun 12 16:26:12 2012 felix pinty
 //
 
-#include	"systeme.h"
+#include	"../header/systeme.h"
 
 
 systeme::systeme()

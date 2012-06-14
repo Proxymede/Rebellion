@@ -9,7 +9,7 @@
 //
 
 #include    <list>
-#include	"personnel.h"
+#include	"../header/personnel.h"
 
 perso::perso(int cbt, int esp, int dip, int cha, std::string name)
 {
