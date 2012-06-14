@@ -12,6 +12,7 @@
 *.cbp
 *.layout
 *.depend
+*.o
 
 #################
 ## Eclipse
